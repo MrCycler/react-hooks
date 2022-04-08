@@ -3,11 +3,19 @@ import React, { useState, useEffect } from "react";
 const Body = () => {
   const [characters, setCharacters] = useState([]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    fetch("https://rickandmortyapi.com/api/character/")
+      .then((response) => response.json())
+      .then((data) => setCharacters(data.results));
+  }, []);
 
   return (
     <div>
-      <h2>sss</h2>
+      {characters
+        .filter((character) => character.name.includes("Smith"))
+        .map((character) => (
+          <h2>{character.name}</h2>
+        ))}
     </div>
   );
 };
