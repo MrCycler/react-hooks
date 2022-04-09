@@ -1,12 +1,18 @@
-import Header from "./components/UseState";
-import Body from "./components/UseEffect";
+import UseState from "./components/UseState";
+import UseEffect from "./components/UseEffect";
+
+import UseContext from "./components/UseContext";
+import { GlobalContextProvider } from "./components/UseContext/context/GlobalContext";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Body />
-    </div>
+    <GlobalContextProvider>
+      <div className="App">
+        <UseState />
+        <UseEffect />
+        <UseContext />
+      </div>
+    </GlobalContextProvider>
   );
 }
 

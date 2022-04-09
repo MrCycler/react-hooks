@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import "./styles.css";
 
-const Header = () => {
+const UseState = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   const handleClick = () => {
@@ -8,8 +9,8 @@ const Header = () => {
   };
 
   return (
-    <div>
-      <h1>Un simple header</h1>
+    <div className="use_state">
+      <h1>UseState</h1>
       <button onClick={handleClick}>
         {darkMode ? "Dark mode" : "Light mode"}
       </button>
@@ -17,4 +18,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default UseState;

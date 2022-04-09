@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import "./styles.css";
 
-const Body = () => {
+const UseEffect = () => {
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
@@ -10,14 +11,15 @@ const Body = () => {
   }, []);
 
   return (
-    <div>
+    <div className="use_effect">
+      <h1>UseEffect</h1>
       {characters
         .filter((character) => character.name.includes("Smith"))
         .map((character) => (
-          <h2>{character.name}</h2>
+          <p>{character.name}</p>
         ))}
     </div>
   );
 };
 
-export default Body;
+export default UseEffect;
